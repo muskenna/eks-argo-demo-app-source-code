@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-argocd-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/muskenna/eks-argo-demo-app-source-code.git  # Can point to either a Helm chart repo or a git repo.
+    targetRevision: HEAD
+    path: dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myapp
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      automated:
+        selfHeal: true
+        prune: true
+
+#https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/application.yaml
