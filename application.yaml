@@ -17,8 +17,7 @@ spec:
     syncOptions:
     - CreateNamespace=true
     automated:
-      automated:
-        selfHeal: true
-        prune: true
+      selfHeal: true
+      prune: true
 
 #https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/application.yaml
