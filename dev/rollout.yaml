@@ -30,5 +30,5 @@ spec:
   strategy:
     blueGreen:
       autoPromotionEnabled: false
-      activeService: nginx-web
-      previewService: nginx-web-preview
+      activeService: nginx-service-loadbalancer
+      previewService: nginx-service-loadbalancer-preview
